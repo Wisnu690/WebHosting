@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pariwisata indonesia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <img class="mySlides" src="assets/img/hero1.png" style="width:100%">
+        <div class="header">
+            <div class="container-header">
+                <div class="header-text">
+                    <h2>Warisan Budaya yang Terlupakan</h2>
+                </div>
+                <br>
+                <div class="header-img">
+                    <img src="assets/img/logo.png" alt="" srcset="">
+                </div>
+                <div class="header-text">
+                    <p>“Lebih dari sekadar destinasi wisata—Bali punya warisan budaya yang kurang dikenal. Mari mengenalnya lebih dekat”</p>
+                    <p>#BaliUnseen</p>
+                    <p>#ExploreTheUnseen</p>
+                </div>
+            </div>
+
+
+            <div class="track-slides" id="tracker">
+            </div>
+        </div>
+        
+    </header>
+    <main>
+        <div class="info-container">
+            <div class="row-info">
+                
+            </div>
+        </div>
+        <div class="top-container">
+            <div class="top-header">
+                <h3 class="top-title">Tradisi <span>Bali</span> Yang Jarang Diketahui</h3>
+                <div class="card-container">
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <div class="img-top">
+                            <img src="https://m.media-amazon.com/images/I/61s0OXP74mL._AC_SY679_.jpg" alt="" srcset="">
+                        </div>
+                        <div class="text-top">
+                            <h3>__________</h3>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        var myIndex = 0;
+        track();
+        carousel();
+        
+        function track() {
+            var ii;
+            var xx = document.getElementsByClassName("mySlides");
+            var panjang = 100 / xx.length;
+            for (ii = 0; ii < xx.length; ii++) {
+                document.getElementById("tracker").innerHTML += '<div class="track-bar" style="width:'+panjang+'%;"><div class="bar"></div></div>';
+            }
+        }
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var xs = document.getElementsByClassName("bar");
+            var heades = document.getElementById("header");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none"; 
+                xs[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}
+            var link = x[myIndex-1].src;
+            xs[myIndex-1].style.display = "block";
+            heades.style.backgroundImage = "url('"+link+"')";
+            setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var elem = document.querySelectorAll('.nav-link');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById("navbar").style.backgroundColor = "#e6ccb3";
+                for(var i=0; i<elem.length; i++){
+                    elem[i].classList.remove("bg");
+                }
+            } else {
+                document.getElementById("navbar").style.backgroundColor = "transparent";
+                for(var i=0; i<elem.length; i++){
+                    elem[i].classList.add("bg");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
